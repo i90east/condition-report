@@ -1,3 +1,4 @@
+<title>Condition Report</title>
 <script>
 /* Clear Checkbox Selections and Textboxes on Page Load */    
     function clearInputs() {
@@ -51,7 +52,7 @@ function printElementWithInputs(elementId) {
   // Set the CSS rules
   var cssRules = `
      @page { margin-left: 0.4in; margin-top:0.0in; }
-     html, body { margin: 0; padding: 0; }    
+     html, body { margin: 0px; }    
      body { font-family: 'Verdana', sans-serif; font-size: 14px; }
     .prewrap { white-space: pre-wrap; }
     .condchecks { margin:-7px 0px -7px 0px; }
@@ -126,27 +127,28 @@ function printElementWithInputs(elementId) {
 </script>
 <style>
     .button {background:rgba(67,131,139,0.09);border-radius:5px;color:#408189;cursor:pointer;border: none;padding: 15px 50px;}
-    .condchecks { margin:-7px 0px -7px 0px; }
     .condhead {display:none}
-    p.format {font-size:14px;line-height:1.3;margin-left:24px}
+    p.format {font-size:20px;line-height:1.3;margin-left:800px;}
     .prewrap {white-space:pre-wrap}
     .textarea-border { font-family: 'Verdana', sans-serif; border: 1px solid #000000; font-size: 14px; }
 </style>
 
 <!-- Condition Report -->
-<h2>Condition Report</h2>
+<p class="format prewrap" style="font-size: 30px;margin-top:180px;">Condition Report</h2></p>
 <div id="printableDiv">
 <span class="condhead"><img src="https://i90east.github.io/condition-report/logo.png"></span>
 
-<p class="format">Condition noted prior to patron checkout:</p>
+<p class="format prewrap">Condition noted prior to patron checkout:
 
-<p class="format prewrap condchecks"><input type="checkbox" id="checkbox1"> Binding loose/split
+<input type="checkbox" id="checkbox1"> Binding loose/split
 <input type="checkbox" id="checkbox2"> Case/cover damaged
 <input type="checkbox" id="checkbox3"> Pages loose/missing
 <input type="checkbox" id="checkbox4"> Pages marked/torn
-<input type="checkbox" id="checkbox5"> Water damage/stains</p>
+<input type="checkbox" id="checkbox5"> Water damage/stains
 
-<p class="format prewrap">Other/note:
-<textarea id="textbox1" class="textarea-border" style="resize: none;overflow;hidden;margin-top:2px" rows="3" cols="23" oninput="checkTextarea(this)"></textarea></div><div style="margin:-10px 0px 10px 24px;font-style: italic;font-size: 12px;">Please include date & initials</div></p>
-   <p style="margin:12px 0px 0px 14px"><input type="button" class="button" value="Print" id="enter" onclick="printElementWithInputs('printableDiv')"></input></p>
+Other/note:
+<textarea id="textbox1" class="textarea-border" style="resize: none;overflow;hidden;margin-top:2px" rows="3" cols="23" oninput="checkTextarea(this)"></textarea></div>
+
+<p class="format prewrap">Please include date & initials
+<input type="button" class="button" value="Print" id="enter" onclick="printElementWithInputs('printableDiv')"></input></p>
 </div>
