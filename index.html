@@ -1,5 +1,5 @@
 <script>
-/* ? ? Clear Checkbox Selections and Textboxes on Page Load ? ? */    
+/* Clear Checkbox Selections and Textboxes on Page Load */    
     function clearInputs() {
       // Clear checkboxes
       var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -123,20 +123,34 @@ function printElementWithInputs(elementId) {
         document.addEventListener('keypress', handleKeyPress);
 </script>
 
-<!-- ? ? Condition Report ? ? -->
-<div class="list" id="list13">
-<div class="back" onclick="restoreMenu()">=</div>
+<style>
+.checkbox-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+.list {
+  padding: 2in;
+  box-sizing: border-box;
+}
+.back {
+  display: none;
+}
+</style>
+
+<!-- Condition Report -->
 <div class="heading" style="margin-top:-4px"><h2>Condition Report</h2></div>
 <div id="printableDiv">
 <span class="condhead";><img src="https://github.com/i90east/condition-report/logo.png"></span>
 
 <p class="format">Condition noted prior to patron checkout:</p>
 
-<p class="format prewrap condchecks"><input type="checkbox" id="checkbox1"> Binding loose/split
-<input type="checkbox" id="checkbox2"> Case/cover damaged
-<input type="checkbox" id="checkbox3"> Pages loose/missing
-<input type="checkbox" id="checkbox4"> Pages marked/torn
-<input type="checkbox" id="checkbox5"> Water damage/stains</p>
+<div class="format condchecks checkbox-group">
+  <label><input type="checkbox" id="checkbox1"> Binding loose/split</label>
+  <label><input type="checkbox" id="checkbox2"> Case/cover damaged</label>
+  <label><input type="checkbox" id="checkbox3"> Pages loose/missing</label>
+  <label><input type="checkbox" id="checkbox4"> Pages marked/torn</label>
+  <label><input type="checkbox" id="checkbox5"> Water damage/stains</label>
+</div>
 
 <p class="format prewrap">Other/note:
 <textarea id="textbox1" class="textarea-border" style="resize: none;overflow;hidden;margin-top:2px" rows="3" cols="22" oninput="checkTextarea(this)"></textarea></div><div style="margin:-10px 0px 10px 24px;font-style: italic;font-size: 12px;">Please include date & initials</div></p>
